@@ -25,13 +25,19 @@ namespace ConsoleApplication1
         class einer
         {
             // Private Eigenschaften
-
+            Random r = new Random(); 
             // Öffentliche Eigenschaften
             public int posx, posy;
             public ConsoleColor farbe;
             // Konstruktor
             public einer()
             {
+                do{
+                    posx = r.Next(0, seite);
+                    posy = r.Next(0, seite);
+                } while (feld[posx,posy] == 1);
+                feld[posx, posy] = 1;
+                farbe = (ConsoleColor)(r.Next(Enum.GetNames(typeof(ConsoleColor)).Length));
             }
             //Private Methoden
             void show()
