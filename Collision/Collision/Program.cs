@@ -42,6 +42,8 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write("O");
             }
             void hide()
             {
