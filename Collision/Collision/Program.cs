@@ -47,6 +47,8 @@ namespace ConsoleApplication1
             }
             void hide()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write(" ");
             }
             void collide()
             {
