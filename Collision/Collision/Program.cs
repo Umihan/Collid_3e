@@ -25,7 +25,7 @@ namespace ConsoleApplication1
         class einer
         {
             // Private Eigenschaften
-            Random r = new Random(); 
+            Random r = new Random();   //Random für Konstruktor einer()
             // Öffentliche Eigenschaften
             public int posx, posy;
             public ConsoleColor farbe;
@@ -33,11 +33,12 @@ namespace ConsoleApplication1
             public einer()
             {
                 do{
-                    posx = r.Next(0, seite);
-                    posy = r.Next(0, seite);
-                } while (feld[posx,posy] == 1);
-                feld[posx, posy] = 1;
-                farbe = (ConsoleColor)(r.Next(Enum.GetNames(typeof(ConsoleColor)).Length));
+                    posx = r.Next(0, seite);   //dem Objekt eine zufällige X-Koordinate geben
+                    posy = r.Next(0, seite);   //dem Objekt zufällige Y-Koordinate geben
+                } while (feld[posx,posy] == 1);     //überprüfen ob Position bereits besetzt
+                feld[posx, posy] = 1;   //neue Koordinate in Array abspeichern
+                farbe = (ConsoleColor)(r.Next(Enum.GetNames(typeof(ConsoleColor)).Length));   //farbe = zufällige ConsoleColor
+                System.Threading.Thread.Sleep(20);    //20 ms langes Delay, weil Zyklus von Random Klasse 15 ms lang ist
             }
             //Private Methoden
             void show()
