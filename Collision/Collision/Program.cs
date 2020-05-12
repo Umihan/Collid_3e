@@ -43,12 +43,21 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                Console.ForegroundColor = farbe;
+                Console.SetCursorPosition(posx, posy);
+                Console.Write("O");
+                Console.ResetColor();
             }
             void hide()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write(" ");
             }
             void collide()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write("X");
+                Move();
             }
             //Öffentliche Methoden
             public void Move()
