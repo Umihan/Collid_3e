@@ -45,6 +45,7 @@ namespace ConsoleApplication1
                 Console.ForegroundColor = farbe;
                 Console.SetCursorPosition(posx, posy);
                 Console.Write("O");
+                Console.ResetColor();
             }
             void hide()
             {
