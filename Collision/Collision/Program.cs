@@ -42,6 +42,7 @@ namespace ConsoleApplication1
             //Private Methoden
             void show()
             {
+                Console.ForegroundColor = farbe;
                 Console.SetCursorPosition(posx, posy);
                 Console.Write("O");
             }
