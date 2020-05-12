@@ -52,6 +52,8 @@ namespace ConsoleApplication1
             }
             void collide()
             {
+                Console.SetCursorPosition(posx, posy);
+                Console.Write("X");
                 Move();
             }
             //Öffentliche Methoden
