@@ -62,6 +62,34 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
+                int newpos;
+                newpos = r.Next(0,7);
+
+                hide();
+                feld[posx, posy] = 0;
+
+                
+                int newx = ((newpos + 2) % 3) - 1;
+                int newy = (((newpos / 3) * 2) % 3) - 1;
+
+                posx += newx;
+                posy += newy;
+
+
+
+                if (feld[posx -= newx, posy -= newy] == 1)
+                {
+                    collide();
+                }
+                else
+                {
+                    feld[posx, posy] = 1;
+                    show();  
+                }
+
+
+
+               
             }
 
         }
